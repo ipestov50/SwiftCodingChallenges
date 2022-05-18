@@ -46,4 +46,52 @@ for step in steps {
 }
 print("\(location.x), \(location.y)")
 
-// Why don't we use map? Because map changes the contents of the array. 
+// Why don't we use map? Because map changes the contents of the array.
+
+// MARK: - Rock, Paper, Scissors
+
+/*
+ 
+ 1) Define an enumeration named HandShape with three members: .rock, .paper, .scissors.
+ 2) Define an enumeration named MatchResult with three members: .win, .draw, .lose.
+ 3) Write a function called match that takes two hand shapes and returns a match result. It should return the outcome for the first player (the one with the first hand shape).
+ 
+ */
+
+// code
+
+enum HandShape {
+    case rock
+    case paper
+    case scissors
+}
+
+enum MatchResult {
+    case win
+    case draw
+    case lose
+}
+
+func match(_ firstHandShape: HandShape, _ secondHandShape: HandShape) -> MatchResult {
+    
+    if firstHandShape == secondHandShape {
+        return .draw
+    }
+    
+    if firstHandShape == .rock && secondHandShape == .scissors {
+        return .win
+    }
+    
+    if firstHandShape == .paper && secondHandShape == .rock {
+        return .win
+    }
+    
+    if firstHandShape == .scissors && secondHandShape == .paper {
+        return .win
+    }
+    
+    return .lose
+}
+
+match(.paper, .rock) // win 
+
