@@ -93,5 +93,5 @@ func match(_ firstHandShape: HandShape, _ secondHandShape: HandShape) -> MatchRe
     return .lose
 }
 
-match(.paper, .rock) // win 
+match(.paper, .rock) // win
 
